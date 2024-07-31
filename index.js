@@ -30,8 +30,6 @@ console.log(val)
 
 /*comparing two array for equility */
 
-
-
 function arraysAreEqual(arr1, arr2) {
   if (arr1.length !== arr2.length) {
       return false;
@@ -60,3 +58,43 @@ let ogArray = [1, 2, 3, 4, 5];
 let rtdArray = rotateArray(ogArray, 2);
 console.log(rtdArray);
 
+/* checking array elements*/
+
+function checkArrayElements(arr) {
+  const all = arr.every(element => typeof element === 'number');
+
+  if (all) {
+      console.log("All elements in the array are numbers.");
+  } else {
+      console.log("Not all elements in the array are numbers.");
+  }
+}
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [1, '2', 3, 4, 5];
+
+checkArrayElements(array1);
+checkArrayElements(array2);
+
+/* creating new array with given length*/
+
+function createArrayWithLength(length, value) {
+  const newArray = new Array(length).fill(value);
+  return newArray;
+}
+const length = 5;
+const value = 1;
+const newArray = createArrayWithLength(length, value);
+
+console.log(newArray);
+
+/* Finding index for first occurance */
+
+function findFirstOccurrence(arr, value) {
+  const index = arr.indexOf(value);
+  return index;
+}
+const ary = [10, 20, 30, 20, 40, 50];
+const valueToFind = 20;
+
+const index = findFirstOccurrence(ary, valueToFind);
+console.log("Index of first occurrence of", valueToFind, ":", index);
